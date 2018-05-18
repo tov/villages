@@ -1,3 +1,9 @@
+/*
+ * Memory usage: 2 * n * sizeof(usize)
+ *
+ * For 1_000_000 families, with 64-bit usize (likely), that's 16 MB.
+ */
+
 extern crate rand;
 
 use rand::Rng;

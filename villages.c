@@ -1,3 +1,8 @@
+/*
+ * Memory usage: 2 * n * sizeof(int) + O(1)
+ *
+ * For 1_000_000 families, with 32-bit int (likely), that's 8 MB.
+ */
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

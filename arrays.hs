@@ -1,6 +1,12 @@
 {-# LANGUAGE BangPatterns, FlexibleContexts #-}
 module Main where
 
+{-
+ - Memory usage: 2 * n * sizeof(array packed Int) + O(1)
+ -
+ - For 1_000_000 families, with 64-bit Int, that's 16 MB.
+ -}
+
 import Control.Monad (when)
 import Data.Array.IO (IOUArray)
 import Data.Array.MArray (newArray, writeArray, readArray, getBounds)
