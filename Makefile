@@ -6,3 +6,11 @@ arrays: arrays.hs
 
 lists: lists.hs
 	ghc -o $@ --make $^ -O3
+
+arrays-prof: arrays.hs
+	ghc -o $@ --make $^ -O3 -rtsopts -prof
+
+lists-prof: lists.hs
+	ghc -o $@ --make $^ -O3 -rtsopts -prof
+
+
