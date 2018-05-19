@@ -4,4 +4,7 @@ version = "0.1.0"
 authors = ["Jesse A. Tov <jesse.tov@gmail.com>"]
 
 [dependencies]
-rand = "0.4"
+libc = "0.2"
+
+# Enables better (but slower) random number generation:
+rand = { optional = true, version = "0.4" }
