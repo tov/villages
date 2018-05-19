@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define NFAMILIES 1000000
 
@@ -67,6 +68,8 @@ double avg_children_per_family(village_t village, size_t nfamilies)
 
 int main()
 {
+    srand(time(NULL));
+
     village_t village = create_village(NFAMILIES);
     printf("%f\n", avg_children_per_family(village, NFAMILIES));
     destroy_village(village);
