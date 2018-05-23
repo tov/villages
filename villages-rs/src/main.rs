@@ -98,8 +98,8 @@ impl Family {
 
 #[cfg(feature = "rand")]
 fn one_in_rng(rng: &mut Rng, n: usize) -> bool {
-    use rand::distributions::{Range, IndependentSample};
-    Range::new(0, n).ind_sample(rng) == 0
+    use rand::distributions::{Range, Distribution};
+    Range::new(0, n).sample(rng) == 0
 }
 
 #[cfg(not(feature = "rand"))]
