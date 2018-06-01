@@ -37,6 +37,11 @@ extend_family family = do
     extend_family (child : family)
   else return family
 
+generate_child :: Distribution Child
+generate_child = do
+  b <- one_chance_in 2
+  return $ if b then Girl else Boy
+
 -- Randomness utilities
 
 type Distribution = State StdGen
@@ -50,11 +55,6 @@ one_chance_in n = do
   let (pick, state') = randomR (1, n) state
   put state'
   return $ pick == 1
-
-generate_child :: Distribution Child
-generate_child = do
-  b <- one_chance_in 2
-  return $ if b then Girl else Boy
 
 -- Queries
 
